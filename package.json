@@ -1,0 +1,19 @@
+{
+  "name": "ecoolhook",
+  "version": "1.0.0",
+  "description": "Frida agent written in TypeScript",
+  "private": true,
+  "main": "agent/index.ts",
+  "scripts": {
+    "prepare": "npm run build",
+    "build": "frida-compile agent/index.ts -o _agent.js -c",
+    "watch": "frida-compile agent/index.ts -o _agent.js -w",
+    "build-stable": "frida-compile agent/index_stable.ts -o _agent_stable.js -c",
+    "watch-stable": "frida-compile agent/index_stable.ts -o _agent_stable.js -w"
+  },
+  "dependencies": {
+    "@types/frida-gum": "^18.3.2",
+    "@types/node": "^20.3.0",
+    "frida-compile": "^16.2.2"
+  }
+}
